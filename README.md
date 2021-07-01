@@ -14,7 +14,6 @@ import {searchByHash} from 'ascii2d'
  */
 searchByHash('273a0c5b96e09f4bad06c8041585ffc0','color',true)
 //alternative: searchByUrl(), searchByBuffer()
-searchBy
 ```
 ### Example Returns 
 ```jsonc
