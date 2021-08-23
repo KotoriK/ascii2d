@@ -14,6 +14,25 @@ export type ASCII2DSourceType =
 import { ASCII2D_BASE_URL, USER_AGENT, } from './config'
 import { getSearchHash, getSearchHashLocal } from './digest';
 import { concatUrl, httpError } from './util';
+export interface ASCII2DResultData_Item {
+    title: string,
+    author: string,
+    from: ASCII2DSourceType
+    /**作品链接 */
+    artwork_url: string
+    /**作者主页链接 */
+    author_url: string
+    size:string
+    type:string
+    file_size:string
+}
+export type ASCII2DResultData = {
+    /**搜索结果的原始Url */
+    url: string,
+    /**搜索结果 */
+    results: Array<ASCII2DResultData_Item>
+    searchMode: ASCII2DSearchMode
+}
 function parseResult(body: string, returnAll: true | number) {
     const $ = Cheerio.load(body)
     const itemBoxes = $('.item-box').slice(1, typeof returnAll == 'number' ? returnAll : undefined)
@@ -42,25 +61,6 @@ function parseResult(body: string, returnAll: true | number) {
         }
     }
     return result
-}
-export interface ASCII2DResultData_Item {
-    title: string,
-    author: string,
-    from: ASCII2DSourceType
-    /**作品链接 */
-    artwork_url: string
-    /**作者主页链接 */
-    author_url: string
-    size:string
-    type:string
-    file_size:string
-}
-export type ASCII2DResultData = {
-    /**搜索结果的原始Url */
-    url: string,
-    /**搜索结果 */
-    results: Array<ASCII2DResultData_Item>
-    searchMode: ASCII2DSearchMode
 }
 /**
  * 
