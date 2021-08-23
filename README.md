@@ -9,7 +9,7 @@ npm i https://github.com/KotoriK/ascii2d
 import {searchByHash} from 'ascii2d'
 /**
  * @param hash image hash
- * @param searchMode 'color' or 
+ * @param searchMode 'color' or 'bovw'
  * @param returnAll numbers of results you want, or pass not-numeric value(except those equal to false) to return all of them
  */
 searchByHash('273a0c5b96e09f4bad06c8041585ffc0','color',true)
