@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.getSearchHashLocalStream = exports.getSearchHashLocal = exports.getSearchHash = void 0;
+exports.getSearchHashLocal = exports.getSearchHash = void 0;
 const tslib_1 = require("tslib");
 const config_1 = require("./config");
 const CODE = tslib_1.__importStar(require("./code"));
@@ -61,7 +61,3 @@ async function getSearchHashLocal(buf) {
     return hash.digest('hex');
 }
 exports.getSearchHashLocal = getSearchHashLocal;
-async function getSearchHashLocalStream(stream) {
-    return getSearchHashLocal(await util_1.readStream(stream));
-}
-exports.getSearchHashLocalStream = getSearchHashLocalStream;

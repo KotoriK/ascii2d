@@ -7,4 +7,3 @@ import { Readable } from 'stream';
  */
 export declare function getSearchHash(pic: Buffer | Readable | string): Promise<string>;
 export declare function getSearchHashLocal(buf: Buffer): Promise<string>;
-export declare function getSearchHashLocalStream(stream: Readable): Promise<string>;
