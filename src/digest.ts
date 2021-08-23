@@ -57,6 +57,3 @@ export async function getSearchHashLocal(buf:Buffer){
     hash.update(buf)
     return hash.digest('hex')
 }
-export async function getSearchHashLocalStream(stream:Readable){
-    return getSearchHashLocal(await readStream(stream))
-}
